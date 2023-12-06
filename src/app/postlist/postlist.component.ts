@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class PostlistComponent {
 
+  Postfeed(feed:string){
+    alert (feed);
+  }
+
+  showFeed(){
+    alert("feeds");
+  }
 }

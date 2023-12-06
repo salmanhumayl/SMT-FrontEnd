@@ -1,0 +1,26 @@
+<main>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 m-3">
+    <div class="col-md-9">
+      <div class="card shadow-sm mb-3 post-bg">
+          <div class="card-body">
+            
+            <form class="d-flex">
+              <input class="form-control mr-2" type="text" placeholder="What is happening?" aria-label="Search" id="feedline" name="feedline"[(ngModel)]="feedline" />
+              <button type="button" class="btn btn-sm btn-primary" (click)="PostButtonClick()">Post</button>
+            </form>
+            <div class="mb-3 mt-3">
+              <label for="formFileSm" class="form-label">Upload File</label>
+              <input class="form-control form-control-sm" id="formFileSm" type="file">
+            </div>
+          </div>
+        </div>
+      <app-postlist></app-postlist>
+
+  </div>
+  <div class="col-md-3">
+ <app-sidebanner></app-sidebanner>
+</div>
+</div>
+
+
+</main>
