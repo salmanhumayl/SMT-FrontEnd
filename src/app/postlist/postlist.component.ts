@@ -18,7 +18,7 @@ export class PostlistComponent implements OnInit   {
   totalPage:number;
 
   startIndex:number=0;
-  endIndex:number=5;
+  endIndex:number=10;
   page:number=0;
 
   constructor(private AJESservice:AppService){
@@ -52,7 +52,7 @@ export class PostlistComponent implements OnInit   {
     //  alert(Math.round(20 / 10));
      // let aa=new Array(length);
     //  return aa;
-      return new Array(Math.ceil(length / 5));
+      return new Array(Math.ceil(length / 10));
     }
 
     updateIndex(pageindex:number){

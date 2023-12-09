@@ -34,14 +34,16 @@ export class PostingComponent implements OnInit,AfterViewInit {
       //  console.log(response);
          var result=JSON.parse(JSON.stringify(response));
          if (result.message=="ok"){
-         this.list.showFeed(); 
-         this.isLoading=false;
-         this.feedline="";    
+          this.list.showFeed(); 
+          this.isLoading=false;
+          this.feedline="";    
          }  
           });
    
  
 }
+
+
 
 chooseFile(event:any)
   {
