@@ -9,6 +9,7 @@ describe('PostingComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ PostingComponent ]
+     
     })
     .compileComponents();
 
