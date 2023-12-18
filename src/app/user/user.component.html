@@ -1,26 +1,63 @@
 <main class="form-signin w-100 m-auto">
     <form>
+      <div *ngIf="lShowRegiter">
+     
       <img class="mb-4" src="images/logo-b.png" alt=""  height="57">
       <h1 class="h3 mb-3 fw-normal">Register Form</h1>
 
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Name</label>
+        <input type="email" class="form-control" 
+        name="Name"
+        id="Name"
+        [(ngModel)]="UserModel.Name"
+        placeholder="Name" >
+        <label for="floatingInputName">Name</label>
       </div>
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Email</label>
+        <input type="email" class="form-control" 
+        name="Email"
+        id="Email"
+        [(ngModel)]="UserModel.Email"
+         placeholder="Email" >
+        <label for="floatingInputEmail">Email</label>
       </div>
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-        <label for="floatingInput">Username</label>
+        <input type="text" class="form-control" 
+        id="UserName" 
+        name="UserName"
+        [(ngModel)]="UserModel.UserName"
+        placeholder="UserName" >
+        <label for="floatingInputuserName">Username</label>
       </div>
       <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-        <label for="floatingPassword">Password</label>
+        <input type="password" class="form-control" 
+        id="Password" 
+        name="Password"
+        [(ngModel)]="UserModel.Password"
+        placeholder="Password" >
+        <label for="floatingPasswordPwd">Password</label>
       </div>
+    </div>
 
-      <button class="btn btn-primary w-100 py-2" type="submit">Register</button>
+    <div *ngIf="!lShowRegiter">
+        
+      <div class="form-floating">
+        <input type="text" 
+        class="form-control" 
+        id="TwoWayFactor"
+        name="TwoWayFactor"
+        [(ngModel)]="UserModel.TwoFactorCode" 
+        placeholder="Mobile OPT" >
+        <label for="floatingPassword">Enter Your Email OPT</label>
+      </div>
+    </div>
+     
+
+      <button class="btn btn-primary w-100 py-2" type="submit" (click)="Register()">
+        <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status"
+        aria-hidden="true"></span>
+        
+        Register</button>
       <p class="mt-5 mb-3 text-body-secondary">&copy; 2023 All rights reserved</p>
     </form>
   </main>

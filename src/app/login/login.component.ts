@@ -42,7 +42,7 @@ export class LoginComponent {
        else{
         this.notify.showError("Invalid UserName or Password");
          form.reset();
-        
+         this.isLoading=false;
        }
        });
 

@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Observable, catchError, retry, throwError } from 'rxjs';
 import { Post } from '../Model/Post';
 import { loginmodel } from '../Model/loginmodel';
+import { UserModel } from '../Model/UserModel';
 
 
 
@@ -37,6 +38,10 @@ export class AppService {
     
   }
 
+  UserRegistration (model :UserModel) :Observable<any> {
+    return this._http.post<any>(this.domain + "api/Authenticate/UserRegistration",model)
+  
+  }
 
   Login (model :loginmodel) :Observable<any> {
     return this._http.post<any>(this.domain + "api/Authenticate/Login",model)
