@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { environment } from 'src/environments/environment';
 import { Observable, catchError, retry, throwError } from 'rxjs';
 import { Post } from '../Model/Post';
+import { loginmodel } from '../Model/loginmodel';
 
 
 
@@ -35,6 +36,13 @@ export class AppService {
     );
     
   }
+
+
+  Login (model :loginmodel) :Observable<any> {
+    return this._http.post<any>(this.domain + "api/Authenticate/Login",model)
+  
+  }
+  
 
    private handleError(error:HttpErrorResponse){
     if (error.error instanceof Error) {

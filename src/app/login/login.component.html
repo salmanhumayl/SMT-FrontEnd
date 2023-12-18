@@ -1,0 +1,35 @@
+<main class="form-signin w-100 m-auto">
+  <form (ngSubmit)="onSubmitlogin(loginform)" #loginform="ngForm" class="row g-3 needs-validation" novalidate>
+     
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+      <div class="form-floating">
+        <input type="text"
+        id="username" 
+        name="username" 
+        [(ngModel)]="LoginModel.UserName" 
+        class="form-control"
+         id="usernameInput" 
+        >
+        <label for="usernameInput">Username</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" 
+        name="password" 
+        id="password"
+        [(ngModel)]="LoginModel.Password"
+        class="form-control" 
+        id="userPassword" 
+        placeholder="Password">
+        <label for="userPassword">Password</label>
+      </div>
+
+      
+      <button class="btn btn-primary w-100 py-2" type="submit" [disabled]="loginform.invalid">
+        <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status"
+        aria-hidden="true"></span>Sign in
+      
+      </button>
+      <p class="mt-5 mb-3 text-body-secondary">&copy; 2023 All rights reserved</p>
+    </form>
+  </main>

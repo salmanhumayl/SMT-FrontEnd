@@ -1,6 +1,6 @@
 export const environment = {
     production:true,
-    domain:"http://ajes-webapp.ajes.ae:4222/",
+    domain:"http://ajes-webapp.ajes.ae:8222/",
    
    };
    
