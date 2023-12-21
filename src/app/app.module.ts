@@ -15,6 +15,7 @@ import { PostingComponent } from './posting/posting.component';
 import { SidebannerComponent } from './sidebanner/sidebanner.component';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 
 
@@ -29,7 +30,8 @@ import { LoginComponent } from './login/login.component';
     PostingComponent,
     SidebannerComponent,
     UserComponent,
-    LoginComponent
+    LoginComponent,
+    ConfirmationComponent
    
   ],
   imports: [
