@@ -26,10 +26,13 @@ export class LoginComponent {
 
   
   onSubmitlogin(form:NgForm){
+
+    if (!this.validateFields()){
+      return;
+    }
     this.isLoading=true;
     this.SMTservice.Login(this.LoginModel).subscribe((response:any)=>{
-    
-     
+   
       if (response.isSuccess==true){
         this.authService.StoreUserInfo(response.data);
         this.currentUser=this.authService.getUserInfo();
@@ -48,5 +51,25 @@ export class LoginComponent {
 
 
     
+  }
+
+  validateFields(): boolean {
+
+    if (!this.LoginModel.UserName) {
+      this.notify.showError('User Name required!');
+      document.getElementById('username')?.focus();
+      return false;
+    }
+   
+    else if (!this.LoginModel.Password) {
+      this.notify.showError('Password required!');
+      document.getElementById('password')?.focus();
+      return false;
+    }
+  
+
+    
+
+    return true;
   }
 }
