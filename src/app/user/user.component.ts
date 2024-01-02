@@ -65,7 +65,7 @@ constructor(private SMTservice:AppService,
 
          this.isLoading=true;
         this.SMTservice.UserRegistration(this.UserModel).subscribe((resposne:any)=>{
-         console.log(resposne);
+       //  console.log(resposne);
          this.isLoading=false;
          this.router.navigate(['confirmation']);  
            });

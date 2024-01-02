@@ -13,6 +13,7 @@ export class PostlistComponent implements OnInit   {
   //@Input() currentPage:number;
   //@Input() totalPages:number;
 
+  loading = false;
   postitem:Post[]=[]; 
   currentPage:number;
   totalPage:number;
@@ -65,14 +66,15 @@ export class PostlistComponent implements OnInit   {
     }
 
     showFeed(pagenumber:number=1){
-     
+      this.loading=true;
        this.AJESservice.GetPost(pagenumber).subscribe((post)=>{
          //  var result=JSON.parse(JSON.stringify(post));
              this.postitem=post;
              //this.currentPage=result.currentPage;
              //this.totalPage=result.noOfPages;
-            console.log(post);
-            console.log(this.postitem.length);
+          //  console.log(post);
+          //  console.log(this.postitem.length);
+          this.loading=false;
        });
       }
 

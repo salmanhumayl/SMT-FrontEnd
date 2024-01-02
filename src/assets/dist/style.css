@@ -3,7 +3,7 @@
 }
 
 .header-bg {
-    background-image: url(/assets/images/top-bg-3.jpg);
+    background-image: url(assets/images/top-bg-3.jpg);
     height: 150px;
     padding: 20px;
     display: flex;

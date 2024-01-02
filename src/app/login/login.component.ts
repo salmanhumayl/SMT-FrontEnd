@@ -43,7 +43,8 @@ export class LoginComponent {
         
        }
        else{
-        this.notify.showError("Invalid UserName or Password");
+      
+        this.notify.showError(response.message);
          form.reset();
          this.isLoading=false;
        }
