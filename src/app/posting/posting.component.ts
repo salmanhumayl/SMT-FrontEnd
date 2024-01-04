@@ -35,7 +35,12 @@ export class PostingComponent implements OnInit,AfterViewInit {
       this.notify.showError("Please login");
       return;
     }
-
+   
+    if (this.feedline===undefined || this.feedline===null)
+    { this.notify.showError("Please Fill out the Field");
+      document.getElementById('feedline')?.focus();
+      return ;
+    } 
     this.isLoading=true;
     const formData=new FormData();
     formData.append("Post1", this.feedline);
