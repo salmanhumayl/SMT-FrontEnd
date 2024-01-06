@@ -15,6 +15,7 @@ export class PostlistComponent implements OnInit   {
 
   loading = false;
   postitem:Post[]=[]; 
+  filepath:string="https://supermcxtip.com/viewfiles/";
   currentPage:number;
   totalPage:number;
 
@@ -78,6 +79,9 @@ export class PostlistComponent implements OnInit   {
        });
       }
 
+      downloadfile(filename:string){
+        alert(filename);
+      }
    
   }
 

@@ -16,7 +16,8 @@
                   </div>
                 </div>
               </div>
-              <button type="button" class="btn btn-sm btn-primary">View</button>
+
+              <a [href]="filepath+post.filePath"  class="btn btn-sm btn-primary" *ngIf="post.isAttachment" target="_blank" >View attached file</a>
             </div>
             <hr />
             <!-- <p class="h4">SCX Tips</p>-->

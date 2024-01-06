@@ -4,6 +4,8 @@ export class Post{
     postDate:Date;
     PostedBy:number;
     postedByName:string;
+    isAttachment:boolean;
+    filePath:string;
    
 
 }
