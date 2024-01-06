@@ -28,7 +28,7 @@ export class PostlistComponent implements OnInit   {
 
   ngOnInit(): void {}
     onPageChange(page:number) : void {
-      console.log(page);
+     // console.log(page);
     }
 
     onNextPage(): void {
@@ -60,8 +60,8 @@ export class PostlistComponent implements OnInit   {
       //alert(pageindex);
       if (pageindex >=0){
       this.page=pageindex;
-      this.startIndex=pageindex * 5;
-      this.endIndex=this.startIndex +5;
+      this.startIndex=pageindex * 10;
+      this.endIndex=this.startIndex +10;
       }
     }
 
