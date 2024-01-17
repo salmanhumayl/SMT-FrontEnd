@@ -5,6 +5,7 @@ import { Observable, catchError, retry, throwError } from 'rxjs';
 import { Post } from '../Model/Post';
 import { loginmodel } from '../Model/loginmodel';
 import { UserModel } from '../Model/UserModel';
+import { ForgetPasswordEmaiModel } from '../Model/ForgetPasswordEmaiModel';
 
 
 
@@ -47,7 +48,16 @@ export class AppService {
     return this._http.post<any>(this.domain + "api/Authenticate/Login",model)
   
   }
+
+  forgetpwd (model :ForgetPasswordEmaiModel) :Observable<any> {
+    
+    //return this._http.post<any>(`${this.domain}api/Authenticate/forgetpwd/${EmailAddress}`,'',)
   
+    return this._http.post<any>(this.domain + "api/Authenticate/forgetpwd",model)
+  
+  }
+
+
 
    private handleError(error:HttpErrorResponse){
     if (error.error instanceof Error) {

@@ -35,7 +35,7 @@ constructor(private SMTservice:AppService,
       this.isLoading=true;
       
       this.SMTservice.UserRegistration(this.UserModel).subscribe((response:any)=>{
-        console.log(response);
+        //console.log(response);
         if (response.status=="Error"){
           this.notify.showError(response.message);
           this.isLoading=false;

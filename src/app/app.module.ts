@@ -16,6 +16,7 @@ import { SidebannerComponent } from './sidebanner/sidebanner.component';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
+import { ForgetpasswordComponent } from './autenticate/forgetpassword.component';
 
 
 
@@ -31,7 +32,8 @@ import { ConfirmationComponent } from './confirmation/confirmation.component';
     SidebannerComponent,
     UserComponent,
     LoginComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    ForgetpasswordComponent
    
   ],
   imports: [
