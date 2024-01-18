@@ -18,6 +18,7 @@ import { LoginComponent } from './login/login.component';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { ForgetpasswordComponent } from './authenticate/forgetpassword.component';
 import { ResetpasswordComponent } from './authenticate/resetpassword.component';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 
@@ -35,7 +36,8 @@ import { ResetpasswordComponent } from './authenticate/resetpassword.component';
     LoginComponent,
     ConfirmationComponent,
     ForgetpasswordComponent,
-    ResetpasswordComponent
+    ResetpasswordComponent,
+    PaginationComponent
    
   ],
   imports: [
