@@ -6,6 +6,7 @@ import { Post } from '../Model/Post';
 import { loginmodel } from '../Model/loginmodel';
 import { UserModel } from '../Model/UserModel';
 import { ForgetPasswordEmaiModel } from '../Model/ForgetPasswordEmaiModel';
+import { ChangePasswordModel } from '../Model/ChangePasswordModel';
 
 
 
@@ -54,6 +55,14 @@ export class AppService {
     //return this._http.post<any>(`${this.domain}api/Authenticate/forgetpwd/${EmailAddress}`,'',)
   
     return this._http.post<any>(this.domain + "api/Authenticate/forgetpwd",model)
+  
+  }
+
+  resetpwd (model :ChangePasswordModel) :Observable<any> {
+   
+    //return this._http.post<any>(`${this.domain}api/Authenticate/forgetpwd/${EmailAddress}`,'',)
+  
+    return this._http.post<any>(this.domain + "api/Authenticate/forgetpwdupdate",model)
   
   }
 

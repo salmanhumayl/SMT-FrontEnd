@@ -54,6 +54,7 @@ export class PostingComponent implements OnInit,AfterViewInit {
           this.list.showFeed(); 
           this.isLoading=false;
           this.feedline="";    
+         
          }  
           });
    
