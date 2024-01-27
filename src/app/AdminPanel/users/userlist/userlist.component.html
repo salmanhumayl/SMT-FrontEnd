@@ -1,0 +1,22 @@
+<div class="card shadow-sm mb-3" >
+     <div class="card-body">
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Registrated On</th>
+            <th scope="col">Subscription Valid On</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let users of userlistitem">
+          <tr>
+            <td>{{users.name}}</td>
+            <td>{{users.email}}</td>
+            <td>{{users.createdOn | date:'d MMMM y'}}</td>
+            <td>{{users.subscriptionValidOn | date:'d MMMM y'}}</td>
+          </tr>
+          </tbody>
+          </table>
+  </div>
+</div>

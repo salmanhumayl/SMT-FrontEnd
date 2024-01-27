@@ -19,6 +19,8 @@ import { ConfirmationComponent } from './confirmation/confirmation.component';
 import { ForgetpasswordComponent } from './authenticate/forgetpassword.component';
 import { ResetpasswordComponent } from './authenticate/resetpassword.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { AdminLoginComponent } from './AdminPanel/admin-login/admin-login.component';
+import { UserlistComponent } from './AdminPanel/users/userlist/userlist.component';
 
 
 
@@ -37,7 +39,9 @@ import { PaginationComponent } from './pagination/pagination.component';
     ConfirmationComponent,
     ForgetpasswordComponent,
     ResetpasswordComponent,
-    PaginationComponent
+    PaginationComponent,
+    AdminLoginComponent,
+    UserlistComponent
    
   ],
   imports: [

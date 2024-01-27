@@ -47,6 +47,7 @@ export class ResetpasswordComponent implements OnInit {
         
             this.isLoading=false;
             this.message="Your Password has been Changed."
+            this.ChangePasswordModel = new ChangePasswordModel();
             this.lshowMessage=true;
             
         }

@@ -7,6 +7,7 @@ import { loginmodel } from '../Model/loginmodel';
 import { UserModel } from '../Model/UserModel';
 import { ForgetPasswordEmaiModel } from '../Model/ForgetPasswordEmaiModel';
 import { ChangePasswordModel } from '../Model/ChangePasswordModel';
+import { Userlist } from '../Model/userlist';
 
 
 
@@ -38,8 +39,23 @@ export class AppService {
     
     );
     
+    
+    
   }
-
+  
+  GetUsers():Observable<Userlist[]>{
+  
+    return this._http.get<Userlist[]>(this.domain + "api/Authenticate/GetUsers") 
+    .pipe(
+        
+          catchError(this.handleError)
+    
+    );
+    
+    
+    
+  }
+  
   UserRegistration (model :UserModel) :Observable<any> {
     return this._http.post<any>(this.domain + "api/Authenticate/UserRegistration",model)
   
@@ -47,6 +63,13 @@ export class AppService {
 
   Login (model :loginmodel) :Observable<any> {
     return this._http.post<any>(this.domain + "api/Authenticate/Login",model)
+  
+  }
+
+
+  AdminLoginIn (model :loginmodel) :Observable<any> {
+    
+    return this._http.post<any>(this.domain + "api/Authenticate/AdminLoginIn",model)
   
   }
 

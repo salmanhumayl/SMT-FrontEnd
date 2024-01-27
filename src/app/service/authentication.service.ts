@@ -45,4 +45,16 @@ export class AuthenticationService {
     localStorage.setItem('currentUser', JSON.stringify(userinfo));
   }
 
+  
+  StoreAdminName(Name: string) {
+
+    localStorage.setItem('admintoken', Name);
+  }
+
+  getAdminToken() {
+
+    return localStorage.getItem('admintoken');  // if empty return null
+ }
+
+
 }
