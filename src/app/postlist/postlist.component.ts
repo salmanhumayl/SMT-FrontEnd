@@ -14,14 +14,16 @@ export class PostlistComponent implements OnInit   {
   //@Input() totalPages:number;
 
   loading = false;
-  postitem:Post[]=[]; 
+  postitem:any[]=[]; 
   filepath:string="https://supermcxtip.com/viewfiles/";
   currentPage:number;
-  totalPage:number;
+  noofpages:number;
+  noOfItems:number;
+  
 
-  startIndex:number=0;
-  endIndex:number=15;
-  page:number=0;
+ // startIndex:number=0;
+ // endIndex:number=15;
+ // page:number=0;
 
   constructor(private AJESservice:AppService){
     
@@ -33,6 +35,7 @@ export class PostlistComponent implements OnInit   {
     }
 
     onNextPage(): void {
+      
       this.currentPage += 1;
       this.showFeed(this.currentPage);
     }
@@ -60,21 +63,21 @@ export class PostlistComponent implements OnInit   {
     updateIndex(pageindex:number){
       //alert(pageindex);
       if (pageindex >=0){
-      this.page=pageindex;
-      this.startIndex=pageindex * 15;
-      this.endIndex=this.startIndex +15;
+     // this.page=pageindex;
+    //  this.startIndex=pageindex * 15;
+    //  this.endIndex=this.startIndex +15;
       }
     }
 
-    showFeed(pagenumber:number=1){
+    showFeed(pagenumber:number){
+   
       this.loading=true;
        this.AJESservice.GetPost(pagenumber).subscribe((post)=>{
-         //  var result=JSON.parse(JSON.stringify(post));
-             this.postitem=post;
-             //this.currentPage=result.currentPage;
-             //this.totalPage=result.noOfPages;
-          //  console.log(post);
-          //  console.log(this.postitem.length);
+           var result=JSON.parse(JSON.stringify(post));
+           this.postitem=result.data;
+           this.currentPage=result.currentPage;
+           this.noofpages=result.noOfPages;
+                    
           this.loading=false;
        });
       }

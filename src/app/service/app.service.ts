@@ -30,9 +30,11 @@ export class AppService {
    );
    }
 
-    GetPost(pagenumber:number=1):Observable<Post[]>{
+    GetPost(pagenumber:number=1):Observable<any[]>{
+     
+    //return this._http.post<any>(`${this.domain}api/PostFeed/GetPost/${pagenumber}`,'')
   
-    return this._http.get<Post[]>(this.domain + "api/PostFeed/GetPostInclude") 
+    return this._http.get<any[]>(this.domain + "api/PostFeed/GetPost?pageNumber=" + pagenumber +"&pageSize=15") 
     .pipe(
         
           catchError(this.handleError)

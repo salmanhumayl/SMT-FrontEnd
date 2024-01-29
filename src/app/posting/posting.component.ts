@@ -51,7 +51,7 @@ export class PostingComponent implements OnInit,AfterViewInit {
       //  console.log(response);
          var result=JSON.parse(JSON.stringify(response));
          if (result.message=="ok"){
-          this.list.showFeed(); 
+          this.list.showFeed(1); 
           this.isLoading=false;
           this.feedline="";    
          
@@ -72,7 +72,7 @@ chooseFile(event:any)
 ngOnInit(): void {
 }
  ngAfterViewInit() {
-  this.list.showFeed();
+  this.list.showFeed(1);
   this.GetLoggedinUserDetails();
 }
 GetLoggedinUserDetails()

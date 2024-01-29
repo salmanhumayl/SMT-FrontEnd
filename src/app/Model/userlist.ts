@@ -5,6 +5,7 @@ export class Userlist
   email :string;
   createdOn:Date;
   subscriptionValidOn:Date;
+  isActive:boolean;
 
 
 

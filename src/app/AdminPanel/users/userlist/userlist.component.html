@@ -3,10 +3,12 @@
     <table class="table table-hover">
         <thead>
           <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Registrated On</th>
-            <th scope="col">Subscription Valid On</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Registered On</th>
+            <th>Subscription Valid On</th>
+            <th>Status</th>
+
           </tr>
         </thead>
         <tbody *ngFor="let users of userlistitem">
@@ -15,6 +17,14 @@
             <td>{{users.email}}</td>
             <td>{{users.createdOn | date:'d MMMM y'}}</td>
             <td>{{users.subscriptionValidOn | date:'d MMMM y'}}</td>
+            <div *ngIf="users.isActive==true">
+              <td class="btn btn-success">Active</td>
+            </div>
+            <div *ngIf="users.isActive==false">
+              <td class="btn btn-danger">In Active</td>
+            </div>
+
+          
           </tr>
           </tbody>
           </table>
