@@ -19,6 +19,7 @@ export class PostlistComponent implements OnInit   {
   currentPage:number;
   noofpages:number;
   noOfItems:number;
+  pageSize:number;
   
 
  // startIndex:number=0;
@@ -29,9 +30,14 @@ export class PostlistComponent implements OnInit   {
     
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+ 
+  }
+
     onPageChange(page:number) : void {
-     // console.log(page);
+      this.currentPage = page;
+      this.showFeed(this.currentPage );
     }
 
     onNextPage(): void {
@@ -77,12 +83,14 @@ export class PostlistComponent implements OnInit   {
            this.postitem=result.data;
            this.currentPage=result.currentPage;
            this.noofpages=result.noOfPages;
+           this.noOfItems=result.noOfItems;
+           this.pageSize=result.pageSize;
                     
           this.loading=false;
        });
       }
 
-      downloadfile(filename:string){
+    downloadfile(filename:string){
         alert(filename);
       }
    

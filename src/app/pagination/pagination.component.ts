@@ -17,7 +17,7 @@ export class PaginationComponent {
   }
 
   changePage(page: number): void {
-    alert(1);
+   
     if (page >= 1 && page <= this.totalPages) {
       this.currentPage = page;
       this.pageChanged.emit(page);
